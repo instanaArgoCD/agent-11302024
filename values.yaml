@@ -172,9 +172,9 @@ cluster:
 # The chart will try to auto-detect if the cluster is OpenShift, so you will likely not even need to set this explicitly.
 openshift: true
 
-# rbac:
+rbac:
   # Specifies whether RBAC resources should be created
-  # create: true
+  create: true
 
 # opentelemetry:
   # enabled: false # legacy setting, will only enable grpc, defaults to false
