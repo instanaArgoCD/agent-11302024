@@ -124,13 +124,51 @@ agent:
   #   INSTANA_AGENT_TAGS: dev
   # env: {}
 
-  configuration_yaml: |
+  #configuration_yaml: |
     # Manual a-priori configuration. Configuration will be only used when the sensor
     # is actually installed by the agent.
     # The commented out example values represent example configuration and are not
     # necessarily defaults. Defaults are usually 'absent' or mentioned separately.
     # Changes are hot reloaded unless otherwise mentioned.
-
+  configuration_yaml: |
+    com.instana.plugin.ibmdatapower:
+      enabled: true
+      poll_rate: 60
+      instances:
+        local:
+          port: '5554'
+          username: 'admin'
+          password: 'admin'
+    com.instana.plugin.ibmmq:
+      enabled: true
+      poll_rate: 60 # The default is 60 seconds.
+      support_ha: true # true or false. The default value is false. If the value is true, the HA Queue manger instances will be shown as 1
+      queueManagers:
+        QMGRDEMO:    # Your Queue Manager name here.
+          channel: 'SYSTEM.DEF.SVRCONN' # Server connection channel
+          username: 'admin' # User ID to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          password: 'admin' # User password to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          availabilityZone: 'IBM MQ Zone'
+        QM1:    # Your Queue Manager name here.
+          channel: 'SYSTEM.DEF.SVRCONN' # Server connection channel
+          username: 'admin' # User ID to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          password: 'admin' # User password to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          availabilityZone: 'IBM MQ Cluster Zone'
+        QM2:    # Your Queue Manager name here.
+          channel: 'SYSTEM.DEF.SVRCONN' # Server connection channel
+          username: 'admin' # User ID to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          password: 'admin' # User password to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          availabilityZone: 'IBM MQ Cluster Zone'
+        JMAC:    # Your Queue Manager name here.
+          channel: 'SYSTEM.DEF.SVRCONN' # Server connection channel
+          username: 'admin' # User ID to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          password: 'admin' # User password to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          availabilityZone: 'JMAC MQ Zone'
+        JMACCP4I:    # Your Queue Manager name here.
+          channel: 'SYSTEM.DEF.SVRCONN' # Server connection channel
+          username: 'admin' # User ID to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          password: 'admin' # User password to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          availabilityZone: 'JMAC MQ Zone'
     # It is possible to create files called 'configuration-abc.yaml' which are
     # merged with this file in file system order. So 'configuration-cde.yaml' comes
     # after 'configuration-abc.yaml'. Only nested structures are merged, values are
