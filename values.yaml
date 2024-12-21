@@ -161,13 +161,13 @@ agent:
           availabilityZone: 'IBM MQ Cluster Zone'
         JMAC:    # Your Queue Manager name here.
           channel: 'SYSTEM.DEF.SVRCONN' # Server connection channel
-          username: 'admin' # User ID to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
-          password: 'admin' # User password to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          #username: 'admin' # User ID to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          #password: 'admin' # User password to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
           availabilityZone: 'JMAC MQ Zone'
         JMACCP4I:    # Your Queue Manager name here.
           channel: 'SYSTEM.DEF.SVRCONN' # Server connection channel
-          username: 'admin' # User ID to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
-          password: 'admin' # User password to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          #username: 'admin' # User ID to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
+          #password: 'admin' # User password to connect to MQ. (Required only when user ID and password checking is enabled. Optional)
           availabilityZone: 'JMAC MQ Zone'
     # It is possible to create files called 'configuration-abc.yaml' which are
     # merged with this file in file system order. So 'configuration-cde.yaml' comes
