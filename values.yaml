@@ -236,7 +236,7 @@ zone:
   # zone.name is the custom zone that detected technologies will be assigned to
   name: Agent-11302024-Zone
 
-# k8s_sensor:
+k8s_sensor:
 #   image:
     # k8s_sensor.image.name is the name of the container image of the Instana agent.
     # name: icr.io/instana/k8sensor
@@ -246,11 +246,11 @@ zone:
     # tag: latest
     # k8s_sensor.image.pullPolicy specifies when to pull the image container.
     # pullPolicy: Always
-  # deployment:
+  deployment:
     # Specifies whether or not to enable the Deployment and turn off the Kubernetes sensor in the DaemonSet
     # enabled: true
     # Use three replicas to ensure the HA by the default.
-    # replicas: 3
+    replicas: 2
     # k8s_sensor.deployment.pod adjusts the resource assignments for the agent independently of the DaemonSet agent when k8s_sensor.deployment.enabled=true
     # pod:
       # requests:
