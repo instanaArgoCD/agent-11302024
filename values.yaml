@@ -131,8 +131,8 @@ agent:
     # necessarily defaults. Defaults are usually 'absent' or mentioned separately.
     # Changes are hot reloaded unless otherwise mentioned.
   configuration_yaml: |
-    com.instana.plugin.kubernetes:
-      enabled: false
+    # com.instana.plugin.kubernetes:
+      # enabled: false
     com.instana.plugin.ibmdatapower:
       enabled: true
       poll_rate: 60
